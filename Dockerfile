@@ -12,7 +12,7 @@ RUN \
 
 # Install basic packages
 RUN pacman -S --noconfirm \
-    sudo git curl wget
+    sudo git curl wget openssh
 
 # Install uv
 RUN UV_INSTALL_DIR="/usr/local/bin" \
