@@ -14,6 +14,11 @@ RUN \
 RUN pacman -S --noconfirm \
     sudo git curl wget
 
+# Install uv
+RUN UV_INSTALL_DIR="/usr/local/bin" \
+    bash -c "$(curl -LsSf https://astral.sh/uv/install.sh)" && \
+    rm -rf /usr/local/bin/env{,.fish}
+
 # Setup DumprX
 RUN bash -c "$(curl -sL https://github.com/DumprX/DumprX/raw/refs/heads/main/setup.sh)"
 
